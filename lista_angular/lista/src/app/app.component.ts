@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'lista';
+  title = 'lista-angular';
+
+  // hemos instalado el servidio que es db
+  constructor(private db: AngularFirestore) {
+    const prueba = this.db.collection('prueba').valueChanges();
+    prueba.subscribe(console.log);
+  }
+
 }
