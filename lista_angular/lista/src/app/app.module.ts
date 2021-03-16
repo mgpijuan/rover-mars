@@ -10,6 +10,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LoginComponent } from './paginas/login/login.component';
 import { ListadoComponent } from './paginas/listado/listado.component';
 import { FormsModule } from '@angular/forms';
+import { ListadoRolComponent } from './components/listado-rol/listado-rol.component';
 
 
 var config = {
@@ -27,7 +28,8 @@ var config = {
   declarations: [
     AppComponent,
     LoginComponent,
-    ListadoComponent
+    ListadoComponent,
+    ListadoRolComponent
   ],
   imports: [
     AppRoutingModule,
