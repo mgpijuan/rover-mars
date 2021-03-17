@@ -11,6 +11,9 @@ import { LoginComponent } from './paginas/login/login.component';
 import { ListadoComponent } from './paginas/listado/listado.component';
 import { FormsModule } from '@angular/forms';
 import { ListadoRolComponent } from './components/listado-rol/listado-rol.component';
+import { AdminComponent } from './paginas/admin/admin.component';
+import { JornadasComponent } from './components/jornadas/jornadas.component';
+import { ListadoAlumnosComponent } from './components/listado-alumnos/listado-alumnos.component';
 
 
 var config = {
@@ -29,7 +32,10 @@ var config = {
     AppComponent,
     LoginComponent,
     ListadoComponent,
-    ListadoRolComponent
+    ListadoRolComponent,
+    AdminComponent,
+    JornadasComponent,
+    ListadoAlumnosComponent
   ],
   imports: [
     AppRoutingModule,
