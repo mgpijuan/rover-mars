@@ -15,6 +15,13 @@ import { AdminComponent } from './paginas/admin/admin.component';
 import { JornadasComponent } from './components/jornadas/jornadas.component';
 import { ListadoAlumnosComponent } from './components/listado-alumnos/listado-alumnos.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatCardModule} from '@angular/material/card';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 var config = {
   apiKey: "AIzaSyDoJ26H4xWp3Y5F7jSBtTz8_-D_alN6bI0",
@@ -45,7 +52,11 @@ var config = {
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
-    AngularFireStorageModule // storage
+    AngularFireStorageModule, BrowserAnimationsModule, // storage
+    MatCardModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule
   ],
   providers: [  ],
   bootstrap: [ AppComponent ],

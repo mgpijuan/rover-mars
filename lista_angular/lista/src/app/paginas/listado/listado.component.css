@@ -1,0 +1,12 @@
+.card {
+  margin: 5% auto;
+  width: 50%;
+  }
+
+  .error {
+  color: red
+  }
+
+  .success {
+  color: green
+  }
