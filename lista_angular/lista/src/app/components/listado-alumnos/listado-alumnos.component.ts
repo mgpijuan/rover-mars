@@ -16,21 +16,19 @@ alumnosArrayFiltrado = [];
 
 constructor(private db: AngularFirestore ) {
 this.alumnosRef = this.db.collection('alumnos');
-const alumnos = this.db.collection('alumnos').snapshotChanges()
-alumnos.subscribe((res:any)=>{
-const arrayMapped = res.map((a)=>{
-const data = a.payload.doc.data();
-const id = a.payload.doc.id;
-return {data, id}
-})
-this.alumnosArray = arrayMapped;
-this.alumnosArrayFiltrado = this.alumnosArray;
-});
-
 }
 
 ngOnInit(): void {
-
+  const alumnos = this.db.collection('alumnos').snapshotChanges()
+  alumnos.subscribe((res:any)=>{
+  const arrayMapped = res.map((a)=>{
+  const data = a.payload.doc.data();
+  const id = a.payload.doc.id;
+  return {data, id}
+  })
+  this.alumnosArray = arrayMapped;
+  this.alumnosArrayFiltrado = this.alumnosArray;
+  });
 }
 
 ngOnChanges(changes: SimpleChanges) {

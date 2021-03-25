@@ -29,6 +29,4 @@ console.log('cambio del hijo', ev);
 this.rol.emit(ev);
 }
 
-
-
 }

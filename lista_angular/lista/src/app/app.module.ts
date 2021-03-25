@@ -22,6 +22,11 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { BienvenidaComponent } from './components/bienvenida/bienvenida.component';
+
 
 var config = {
   apiKey: "AIzaSyDoJ26H4xWp3Y5F7jSBtTz8_-D_alN6bI0",
@@ -42,7 +47,8 @@ var config = {
     ListadoRolComponent,
     AdminComponent,
     JornadasComponent,
-    ListadoAlumnosComponent
+    ListadoAlumnosComponent,
+    BienvenidaComponent
   ],
   imports: [
     AppRoutingModule,
@@ -56,7 +62,10 @@ var config = {
     MatCardModule,
     MatFormFieldModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [  ],
   bootstrap: [ AppComponent ],

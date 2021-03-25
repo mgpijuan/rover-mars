@@ -30,7 +30,8 @@ this.crearArrayDeJornadas(this.cuantasJornadasHay.jornadas);
 this.enQueJornadaEstoy = res.find((ele)=>{
 return ele['jornadaActual']
 })
-this.selectedItem = this.enQueJornadaEstoy.jornadaActual
+this.selectedItem = this.enQueJornadaEstoy.jornadaActual;
+this.jornada.emit(this.selectedItem)
 })
 }
 

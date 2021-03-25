@@ -10,3 +10,12 @@
   .success {
   color: green
   }
+
+  mat-button-wrapper{
+    color: white;
+  }
+
+  mat-form-field {
+    margin-right: 12px;
+  }
+
