@@ -16,6 +16,6 @@ export class LogueadoService {
 
   // setter
   setEstado (estado:boolean){
-    estado = this.estoyLogeado
+     this.estoyLogeado = estado
   }
 }
