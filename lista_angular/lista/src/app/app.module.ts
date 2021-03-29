@@ -27,6 +27,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { BienvenidaComponent } from './components/bienvenida/bienvenida.component';
 import { PipeMinusculasPipe } from './pipes/pipeMinusculas/pipe-minusculas.pipe';
+import { AumentarDirective } from './directive/aumentar/aumentar.directive';
 
 
 var config = {
@@ -50,7 +51,8 @@ var config = {
     JornadasComponent,
     ListadoAlumnosComponent,
     BienvenidaComponent,
-    PipeMinusculasPipe
+    PipeMinusculasPipe,
+    AumentarDirective
   ],
   imports: [
     AppRoutingModule,
