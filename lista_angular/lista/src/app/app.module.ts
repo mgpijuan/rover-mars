@@ -9,7 +9,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LoginComponent } from './paginas/login/login.component';
 import { ListadoComponent } from './paginas/listado/listado.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListadoRolComponent } from './components/listado-rol/listado-rol.component';
 import { AdminComponent } from './paginas/admin/admin.component';
 import { JornadasComponent } from './components/jornadas/jornadas.component';
@@ -26,6 +26,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { BienvenidaComponent } from './components/bienvenida/bienvenida.component';
+import { PipeMinusculasPipe } from './pipes/pipeMinusculas/pipe-minusculas.pipe';
 
 
 var config = {
@@ -48,7 +49,8 @@ var config = {
     AdminComponent,
     JornadasComponent,
     ListadoAlumnosComponent,
-    BienvenidaComponent
+    BienvenidaComponent,
+    PipeMinusculasPipe
   ],
   imports: [
     AppRoutingModule,
@@ -65,7 +67,8 @@ var config = {
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ReactiveFormsModule
   ],
   providers: [  ],
   bootstrap: [ AppComponent ],

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LogueadoService } from '../../servicios/logueado/logueado.service';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 
 @Component({
@@ -9,46 +10,74 @@ selector: 'app-login',
 templateUrl: './login.component.html',
 styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
-  email: string | undefined;
-  password: string | undefined;
-  array= [];
-  hide = true;
+hide = true
+array= []
+formData: FormGroup
+pipeVar: 'HOLA'
+
 
 constructor(
 private snackbar: MatSnackBar,
 private route: Router,
-private logueado: LogueadoService
+private logueado: LogueadoService,
+private fb: FormBuilder
 ) {
-
 }
+
+
+ngOnInit(){
+
+const email = [
+{
+value:'', disabled: false
+} , [
+Validators.required,
+Validators.email
+]
+
+];
+
+const password = [
+{ value: '', disabled: false }
+,
+[
+Validators.required,
+Validators.minLength(3),
+Validators.maxLength(9),
+Validators.pattern('^[^.]+$')
+]
+
+];
+
+const config = { email , password };
+
+this.formData = this.fb.group(config)
+}
+
+get email(){ return this.formData.get('email') }
+get password(){ return this.formData.get('password') }
 
 
 login(){
-  //this.login()
-  if(this.email && this.password ){
-  console.log('HAY UN EMAIL Y UN PASSWORD');
-  /// TENGO QUE COMPROBAR SI EL EMAIL Y EL PASSWORD COINCIDEN
+//this.login()
 
-  if ( this.email === 'aeblapalma@gmail.com' && this.password === '123') {
-  /// SI COINCIDEN ENTRA AQUI
-  this.route.navigateByUrl('admin');
-  this.logueado.setEstado(true)
-  } else {
-  this.logueado.setEstado(false)
-  /// SI NO COINCIDEN ENTRA AQUI
-  this.snackbar.open('Email o password', 'OK', {
-  panelClass: ['errorSnackbar']
-  })
-  }
-  }else{
-  this.logueado.setEstado(false)
-  this.snackbar.open('Falta email o password', 'OK', {
-  panelClass: ['errorSnackbar']
+console.log('HAY UN EMAIL Y UN PASSWORD');
+/// TENGO QUE COMPROBAR SI EL EMAIL Y EL PASSWORD COINCIDEN
+if ( (this.formData.get('email').value ==='mgpijuan@gmail.com') && this.formData.get('password').value === '12345') {
+/// SI COINCIDEN ENTRA AQUI
+
+
+this.route.navigateByUrl('admin');
+this.logueado.setEstado(true)
+} else {
+this.logueado.setEstado(false)
+/// SI NO COINCIDEN ENTRA AQUI
+this.snackbar.open('Email o password incorrectos', 'OK', {
+panelClass: ['errorSnackbar']
 })
-
-console.log('FALTA EMAIL O PASSWORD');
 }
+
 }
 }
