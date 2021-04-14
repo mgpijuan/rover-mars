@@ -15,9 +15,10 @@ export class IsLogueadoGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-     //   return this.logueado.getEstado()
+/* esto va hacer que para ir a admin pida siempre la contraseña */
+     return this.logueado.getEstado()
 
-     return true
+     /* para hacer pruebas y que no nos pida la contraseña cada vez, eliminar la superior y dejar solo este */ // return true
       }
 
 }

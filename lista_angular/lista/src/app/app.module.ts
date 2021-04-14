@@ -29,6 +29,11 @@ import { BienvenidaComponent } from './components/bienvenida/bienvenida.componen
 import { PipeMinusculasPipe } from './pipes/pipeMinusculas/pipe-minusculas.pipe';
 import { AumentarDirective } from './directive/aumentar/aumentar.directive';
 
+import {MatTableModule} from '@angular/material/table';
+import { IconoRolPipe } from './pipes/iconoRol/icono-rol.pipe';
+import {MatSortModule} from '@angular/material/sort';
+
+
 
 var config = {
   apiKey: "AIzaSyDoJ26H4xWp3Y5F7jSBtTz8_-D_alN6bI0",
@@ -52,7 +57,8 @@ var config = {
     ListadoAlumnosComponent,
     BienvenidaComponent,
     PipeMinusculasPipe,
-    AumentarDirective
+    AumentarDirective,
+    IconoRolPipe
   ],
   imports: [
     AppRoutingModule,
@@ -70,7 +76,9 @@ var config = {
     MatSelectModule,
     MatButtonModule,
     MatSnackBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatSortModule,
   ],
   providers: [  ],
   bootstrap: [ AppComponent ],
